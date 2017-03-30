@@ -1,0 +1,29 @@
+- description: Checks running jobs and updates status to hipChat and Dashboard every 5 minutes.
+  executionEnabled: true
+  id: a1b2f02f-0fb9-4fde-a05c-3a325b06b8b6
+  loglevel: INFO
+  loglimit: 3mb
+  loglimitAction: halt
+  name: Job Status Update
+  nodeFilterEditable: false
+  schedule:
+    dayofmonth:
+      day: '*'
+    month: '*'
+    time:
+      hour: '*'
+      minute: '*'
+      seconds: '1'
+    year: '*'
+  scheduleEnabled: true
+  sequence:
+    commands:
+    - description: script-check
+      exec: php ~/Scripts/webroot/rundeck-api.php
+    keepgoing: false
+    pluginConfig:
+      WorkflowStrategy:
+        node-first: null
+    strategy: node-first
+  uuid: a1b2f02f-0fb9-4fde-a05c-3a325b06b8b6
+
