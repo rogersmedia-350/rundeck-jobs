@@ -1,5 +1,6 @@
-- description: |
+- description: |-
     php ump m20:migrate data/chur/output/chur_membersFrom1To2436.csv --newsletters=data/chur/chur_newsletter.csv --brand=chur --commit --env=dev
+    '
   executionEnabled: true
   id: 4ec47f93-2ac1-43f3-922b-8f0270c95ac5
   loglevel: INFO
