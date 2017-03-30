@@ -36,11 +36,11 @@
     commands:
     - script: |-
         cd /Users/migrationuser/Desktop/migration-script
-        php ump m20:migrate data/chur/output/chur_membersFrom1To2436.csv --newsletters=data/chur/chur_newsletter.csv --brand=chur --commit --env=dev --conditionalSubColName='Would you like to receive a daily e-mail from Sportsnet 590 The Fan?' --conditionalSubColMapping='radio:chur:weekly' --conditionalSubColTrueValue='Yes' --limit=3
+        php ump m20:migrate data/chur/output/chur_membersFrom1To2436.csv --newsletters=data/chur/chur_newsletter.csv --brand=chur --commit --env=dev --conditionalSubColName='Would you like to receive a daily e-mail from Sportsnet 590 The Fan?' --conditionalSubColMapping='radio:chur:weekly' --conditionalSubColTrueValue='Yes' --limit=3 --jobID=$RD_JOB_ID
     keepgoing: false
     pluginConfig:
       WorkflowStrategy:
-        node-first: null
+        node-first: ''
     strategy: node-first
   timeout: '0'
   uuid: 4ec47f93-2ac1-43f3-922b-8f0270c95ac5
