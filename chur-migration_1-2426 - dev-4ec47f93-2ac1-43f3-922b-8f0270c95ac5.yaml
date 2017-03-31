@@ -4,7 +4,7 @@
   executionEnabled: true
   id: 4ec47f93-2ac1-43f3-922b-8f0270c95ac5
   loglevel: INFO
-  name: chur-migration-1-2426 - dev
+  name: chur-migration_1-2426 - dev
   nodeFilterEditable: false
   notification:
     onfailure:
@@ -12,24 +12,24 @@
         attachLog: true
         recipients: rogersmedia.350@gmail.com
         subject: chur-migration-1-2426 - failed
-      urls: http://local-www.myserver.com/rundeck-api.php?running=false&notify=true
+      urls: http://local-www.migrationserver.com/rundeck-api.php?running=false&notify=true
     onstart:
       email:
         recipients: rogersmedia.350@gmail.com
         subject: chur-migration-1-2426 - started
-      urls: http://local-www.myserver.com/rundeck-api.php?running=false&notify=true
+      urls: http://local-www.migrationserver.com/rundeck-api.php?running=false&notify=true
     onsuccess:
       email:
         attachLog: true
         recipients: rogersmedia.350@gmail.com
         subject: chur-migration-1-2426 - success
-      urls: http://local-www.myserver.com/rundeck-api.php?running=false&notify=true
+      urls: http://local-www.migrationserver.com/rundeck-api.php?running=false&notify=true
   scheduleEnabled: true
   sequence:
     commands:
     - script: |-
         cd /Users/migrationuser/Desktop/migration-script
-        php ump m20:migrate data/chur/output/chur_membersFrom1To2436.csv --newsletters=data/chur/chur_newsletter.csv --brand=chur --commit --env=dev --limit=3 --jobID=$RD_JOB_ID --jobExecID=$RD_JOB_EXECID
+        php ump m20:migrate data/chur/output/chur_membersFrom1To2436.csv --newsletters=data/chur/chur_newsletter.csv --brand=chur --commit --env=dev --jobID=$RD_JOB_ID --jobExecID=$RD_JOB_EXECID
     keepgoing: false
     pluginConfig:
       WorkflowStrategy:
